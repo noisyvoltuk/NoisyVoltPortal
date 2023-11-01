@@ -1,3 +1,5 @@
+using NoisyVoltPortal.Services;
+
 namespace NoisyVoltPortal
 {
     public class Program
@@ -8,6 +10,8 @@ namespace NoisyVoltPortal
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddTransient<IContentDataService, ContentDataService>();
 
             var app = builder.Build();
 
